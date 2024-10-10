@@ -52,11 +52,11 @@ https://{Your host name}/api/method/frappe.integrations.oauth2.authorize?client_
 
 **response** will be:
 
-https://<your host name>/callback?code=la1MmNBuOB4oLKM2vwGnTaIs9P5SDh
+https://{your host name}/callback?code=la1MmNBuOB4oLKM2vwGnTaIs9P5SDh
 
 Get the code, get below api,
 
-https://<Your host name>/api/method/frappe.integrations.oauth2.get_token?grant_type=authorization_code&code=B7ER2blbRJ1hI6TOWeQT8tGO2etqD5&redirect_uri=<same callback url given in image>&client_id=<client id>
+https://{Your host name}/api/method/frappe.integrations.oauth2.get_token?grant_type=authorization_code&code=B7ER2blbRJ1hI6TOWeQT8tGO2etqD5&redirect_uri={same callback url given in image}&client_id={client id}
 
 **Response**
 
