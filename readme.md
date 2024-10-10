@@ -47,7 +47,7 @@ Postman:
 #### Oauth Direct URL
 
 
-https://<Your host name>/api/method/frappe.integrations.oauth2.authorize?client_id=<client id>&state=444&response_type=code&scope=openid all&redirect_uri=<same callback url given in image>
+https://{Your host name}/api/method/frappe.integrations.oauth2.authorize?client_id={client id}&state=444&response_type=code&scope=openid all&redirect_uri={same callback url given in image}
 
 
 **response** will be:
