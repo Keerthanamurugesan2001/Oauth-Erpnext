@@ -28,19 +28,58 @@ Setup > Integrations > OAuth Provider Settings
 
 System Managers can setup behavior of confirmation message as Force or Auto in OAuth Provider Settings. If Force is selected the system will always ask for user's confirmation. If Auto is selected system asks for the confirmation only if there are no active tokens for the user.
 
-**Second**: 
+**Second**:
+
+Go to Oauth client List
+
 
 ![How to update the oauth client](image.png)
 
+
+### How to use oauth api collection
+
 Postman:
 
-https://speeding-crescent-990158.postman.co/workspace/Oauth~e6a1ea0b-f048-49ba-b989-fa2dc9f1d8f7/collection/24147731-f2f5335f-478f-43b6-81ad-33e0c4125f9d?action=share&creator=24147731
+[Oauth Api Postman collection](https://www.postman.com/speeding-crescent-990158/workspace/keerthana-public/collection/24147731-1c80b1ef-3679-4114-9f31-86827700c1ea?action=share&creator=24147731)
 
 [Rest Api Authentication](https://frappeframework.com/docs/user/en/api/rest)
 
-Postman:
+#### Oauth Direct URL
+
+
+https://<Your host name>/api/method/frappe.integrations.oauth2.authorize?client_id=<client id>&state=444&response_type=code&scope=openid all&redirect_uri=<same callback url given in image>
+
+
+**response** will be:
+
+https://<your host name>/callback?code=la1MmNBuOB4oLKM2vwGnTaIs9P5SDh
+
+Get the code, get below api,
+
+https://<Your host name>/api/method/frappe.integrations.oauth2.get_token?grant_type=authorization_code&code=B7ER2blbRJ1hI6TOWeQT8tGO2etqD5&redirect_uri=<same callback url given in image>&client_id=<client id>
+
+**Response**
+
+```
+ {
+ "access\_token": "pNO2DpTMHTcFHYUXwzs74k6idQBmnI",
+ "token\_type": "Bearer",
+ "expires\_in": 3600,
+ "refresh\_token": "cp74cxbbDgaxFuUZ8Usc7egYlhKbH1",
+ "scope": "openid all",
+ "id\_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.XbPfbIHMI6arZ3Y922BhjWgQzWXcXNrz0ogtVhfEd2o"
+ }
+```
+
 
 REF Link:
 [simple-oauth](https://www.npmjs.com/package/simple-oauth2),
 [Oauth2-erp doc](https://frappeframework.com/docs/user/en/guides/integration/rest_api/oauth-2),
 [how to setup oauth](https://frappeframework.com/docs/user/en/guides/integration/how_to_set_up_oauth)
+
+
+**Third**
+
+OAuth Bearer Token
+
+Where all the barer token will be displayed.
